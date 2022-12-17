@@ -1,0 +1,36 @@
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+- main: main.go
+  binary: sqlmapsh
+  id: sqlmapsh
+
+  env:
+  - CGO_ENABLED=0
+
+  goos: [windows,linux,darwin]
+  goarch: [amd64,386,arm,arm64]
+  ignore:
+    - goos: darwin
+      goarch: 386
+    - goos: windows
+      goarch: arm
+    - goos: windows
+      goarch: arm64
+
+archives:
+- format: zip
+  id: sqlmapsh
+  builds: [sqlmapsh]
+  name_template: "{{ .Binary }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+  replacements:
+      darwin: macOS
+      linux: Linux
+      windows: Windows
+      386: i386
+      amd64: x86_64
+
+checksum:
+  algorithm: sha256
