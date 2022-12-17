@@ -1,5 +1,3 @@
-# SQLMap.sh
-
 ![SQLMap.sh](./pics/sqlmapsh.png)
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/unlock-security/sqlmapsh)](https://goreportcard.com/report/github.com/unlock-security/sqlmapsh)
