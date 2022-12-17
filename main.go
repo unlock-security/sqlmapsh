@@ -16,7 +16,7 @@ func main() {
 	var (
 		dnsResolverIP        = "127.0.0.1:53" // SQLMap local DNS resolver.
 		dnsResolverProto     = "udp"          // Protocol to use for the DNS resolver
-		dnsResolverTimeoutMs = 1000           // Timeout (ms) for the DNS resolver (optional)
+		dnsResolverTimeoutMs = 100            // Timeout (ms) for the DNS resolver (optional)
 
 		interactshPollingTimeMs = 500 // Polling time (ms) to check for interaction in Interact.sh
 	)
